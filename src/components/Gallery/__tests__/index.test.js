@@ -18,8 +18,8 @@ describe('Gallery is rendering', () => {
     })
 
     it('renders', () => {
-        const { getTestById } = render(<Gallery currentCategory={portrait} />);
-        expect(getTestById('h1tag')).toHaveTextContent('Portraits');
+        const { getByTestId } = render(<Gallery currentCategory={portrait} />);
+        expect(getByTestId('h1tag')).toHaveTextContent('Portraits');
     })
 });
 

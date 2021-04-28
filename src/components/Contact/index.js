@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+const [formState, setFormState] = useState({ name:'', email: '', message:'' });
 
 function ContactForm() {
     return (
@@ -10,12 +12,12 @@ function ContactForm() {
                     <input type="text" name="name" />
                 </div>
                 <div>
-                    <label htmlFor="email">Name:</label>
+                    <label htmlFor="email">Email:</label>
                     <input type="email" name="email" />
                 </div>
                 <div>
-                    <label htmlFor="meassage">Name:</label>
-                    <textarea name="name" rows="5" />
+                    <label htmlFor="message">Message:</label>
+                    <textarea name="message" rows="5" />
                 </div>
                 <button type="submit">Submit</button>
             </form>

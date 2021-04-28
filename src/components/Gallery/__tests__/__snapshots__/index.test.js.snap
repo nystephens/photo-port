@@ -4,7 +4,7 @@ exports[`Gallery is rendering matches snapshot 1`] = `
 <DocumentFragment>
   <section>
     <h1
-      data-test-id="h1tag"
+      data-testid="h1tag"
     >
       Portraits
     </h1>
