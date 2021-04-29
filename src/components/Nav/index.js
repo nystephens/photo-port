@@ -7,7 +7,9 @@ function Nav(props) {
     const {
         categories = [],
         setCurrentCategory,
-        currentCategory
+        currentCategory,
+        contactSelected,
+        setContactSelected
     } = props;
 
     useEffect(() => {
@@ -30,19 +32,22 @@ function Nav(props) {
                         <a
                             data-test-id="about"
                             href="#about"
+                            onClick = {() => setContactSelected(false)}
                         >
                             About me
             </a>
                     </li>
-                    <li className="mx-2">
-                        <span>Contact</span>
+                    <li className={`mx-2 ${contactSelected && 'navActive'}`}>
+                        <span onClick = {() => setContactSelected(true)}>Contact</span>
                     </li>
                     {categories.map((categories) => (
-                        <li className={`mx-1 ${currentCategory.name === categories.name && 'navActive'
+                        <li className={`mx-1 ${
+                            currentCategory.name === categories.name && !contactSelected && 'navActive'
                             }`} key={categories.name}>
                             <span
                                 onClick={() => {
                                     setCurrentCategory(categories)
+                                    setContactSelected(false);
                                 }}
                             >
                                 {capitalizeFirstLetter(categories.name)}
